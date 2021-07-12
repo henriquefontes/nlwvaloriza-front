@@ -6,5 +6,13 @@
 
 hr {
     width: 100%;
-    border: 1px solid #ccc;
+}
+
+h1, h2, h3, h4, span, p, label, input, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+input {
+    padding: 12px;
+    border-radius: 7px;
 }
