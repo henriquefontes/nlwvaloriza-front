@@ -1,0 +1,29 @@
+.header {
+    width: 100vw;
+    height: 8vh;
+    padding: 0 5vw;
+    background-color: #333;
+    display: flex;
+    color: white;
+}
+
+.header__left, .header__right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header__left--title {
+    text-transform: uppercase;
+}
+
+.header__right {
+    justify-content: flex-end;
+}
+
+.header__right--nav {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
