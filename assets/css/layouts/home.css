@@ -1,0 +1,103 @@
+.home {
+    width: 100%;
+    height: 100%;
+    padding: 4vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home__header {
+    width: 40%;
+}
+
+.home__header--title {
+    color: white;
+    text-align: center;
+    font-size: 28px;
+}
+
+.home__users {
+    width: 100%;
+    padding: 4vh 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.home__users--user {
+    width: 200px;
+    height: 200px;
+    padding: 8px 12px;
+    background-color: #444;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 17px;
+}
+
+.home__users--user--name {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home__user--name {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.home__users--user--image {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.home__user--image {
+    width: 50%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.home__users--user--buttons {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.home__user--compliment, .home__user--profile {
+    width: 50%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 7px;
+    transition: .3s background-color;
+}
+
+.home__user--compliment {
+    background-color: #6C63FF;
+}
+
+.home__user--compliment:hover {
+    cursor: pointer;
+    background-color: rgba(97, 90, 233, 0.561);
+}
+
+.home__user--profile {
+    background-color: #222;
+}
+
+.home__user--profile:hover {
+    cursor: pointer;
+    background-color: rgb(24, 24, 24);
+}

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/layout/reset.css">
-    <link rel="stylesheet" href="assets/css/layout/header.css">
-    <link rel="stylesheet" href="assets/css/layout/main.css">
+    <link rel="stylesheet" href="assets/css/layouts/reset.css">
+    <link rel="stylesheet" href="assets/css/layouts/components.css">
+    <link rel="stylesheet" href="assets/css/layouts/header.css">
+    <link rel="stylesheet" href="assets/css/layouts/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet"> 
-    <title>Document</title>
+    <title>Valoriza</title>
 </head>
 <body>
     <header class="header">
@@ -36,19 +37,23 @@
         <div class="main__right">
             <div class="main__right--login">
                 <div class="main__right--header">
-                    <h2 class="main__right--header--title">Junte-se a nossa <span style="color: #6C63FF">comunidade</span> agora</h2>
+                    <h2 class="main__right--header--title">Junte-se a nossa <span class="span">comunidade</span> agora</h2>
                 </div>
                 <form class="main__right--login--form">
-                    <input type="text" class="main__right--login--form--input" placeholder="Digite seu email">
-                    <input type="password" class="main__right--login--form--input" placeholder="Digite sua senha">
+                    <input type="text" class="main__right--login--form--input" id="name-input" placeholder="Digite seu nome" style="display: none;">
+                    <input type="text" class="main__right--login--form--input" id="email-input" placeholder="Digite seu email">
+                    <input type="password" class="main__right--login--form--input" id="password-input" placeholder="Digite sua senha">
                     <button type="submit" class="main__right--login--form--button">Entrar</button>
-                    <div class="main__right--login--form--divider">
-                        <hr><span class="main__right--login--form--span">ou</span><hr>
-                    </div>
-                    <button type="submit" class="main__right--login--form--button">Criar uma conta</button>
                 </form>
+                <div class="main__right--login--divider">
+                    <hr><span class="main__right--login--span">ou</span><hr>
+                </div>
+                <div class="main__right--login--switch">
+                    <button class="main__right--login--form--button" id="switch-form">Criar uma conta</button>
+                </div>
             </div>
         </div>
     </main>
+    <script src="assets/js/layouts/main.js"></script>
 </body>
 </html>
