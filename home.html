@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="assets/css/layouts/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Valoriza</title>
 </head>
 <body>
@@ -36,10 +37,10 @@
             <div class="home__users">
                 <div class="home__users--user">
                     <div class="home__users--user--name">
-                        <span class="home__user--name">Carlos</span>
+                        <span class="home__user--name">Diego</span>
                     </div>
                     <div class="home__users--user--image">
-                        <img class="home__user--image" src="assets/img/home/user-img.png" alt="" srcset="">
+                        <img class="home__user--image" src="https://blog.rocketseat.com.br/content/images/2019/05/profile.png" alt="" srcset="">
                     </div>
                     <div class="home__users--user--buttons">
                         <div class="home__user--compliment"><span>Elogiar</span></div>
@@ -48,10 +49,10 @@
                 </div>
                 <div class="home__users--user">
                     <div class="home__users--user--name">
-                        <span class="home__user--name">Lucas</span>
+                        <span class="home__user--name">Filipe</span>
                     </div>
                     <div class="home__users--user--image">
-                        <img class="home__user--image" src="assets/img/home/user-img.png" alt="" srcset="">
+                        <img class="home__user--image" src="https://filipedeschamps.com.br/avatar-big.png" alt="" srcset="">
                     </div>
                     <div class="home__users--user--buttons">
                         <div class="home__user--compliment"><span>Elogiar</span></div>
@@ -60,18 +61,60 @@
                 </div>
                 <div class="home__users--user">
                     <div class="home__users--user--name">
-                        <span class="home__user--name">João</span>
+                        <span class="home__user--name">Fábio</span>
                     </div>
                     <div class="home__users--user--image">
-                        <img class="home__user--image" src="assets/img/home/user-img.png" alt="" srcset="">
+                        <img class="home__user--image" src="https://secure.gravatar.com/avatar/53e1b6743d43466ed5d4a4fa1f0915e1?s=500&d=mm&r=g" alt="" srcset="">
                     </div>
                     <div class="home__users--user--buttons">
                         <div class="home__user--compliment"><span>Elogiar</span></div>
                         <div class="home__user--profile"><span>Ver Perfil</span></div>
                     </div>
+                </div>
+                
+            </div>
+            <div class="home__display">
+                <div class="home__display--container">
+                    <div class="home__display--close"><span><i class="fas fa-times"></i></span></div>
+                    <div class="home__display--page--one">
+                        <div class="home__display--header">
+                            <span class="home__display--title">Você quer elogiar alguém, que legal!</span>
+                            <span class="home__display--info">Primeiramente você deve escolher uma Tag que mais se assemelha a ele.</span>
+                        </div>
+                        <div class="home__display--tag--container">
+                            <div class="home__display--tag--list">
+                                <div class="home__display--tag selected"><span class="home__display--tag--name">Gente fina</span></div>
+                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Otimista</span></div>
+                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Professor</span></div>
+                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Sensacional</span></div>
+                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Bacana</span></div>
+                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Vencedor</span></div>
+                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Incrível</span></div>
+                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Camarada</span></div>
+                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Camarada</span></div>
+                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Camarada</span></div>
+                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Camarada</span></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home__display--page--two">
+                        <div class="home__display--message--container">
+                            <div class="home__display--header" style="justify-content: flex-end; height: 30%;"><span class="home__display--title">Opa! Digite uma mensagem de agradecimento:</span></div>
+                            <form class="home__display--form">
+                                <textarea class="home__display--message--input" id="name-input" placeholder="Você é sensacional!!"></textarea>
+                                <button class="home__display--message-button">Enviar elogio</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="home__display--page--switch">
+                        <span class="home__display--switch1 selected">1</span>
+                        <span class="home__display--switch2 not-selected">2</span>
+                    </div> 
                 </div>
             </div>
         </div>
     </main>
+    <script src="assets/js/layouts/home.js"></script>
 </body>
 </html>
