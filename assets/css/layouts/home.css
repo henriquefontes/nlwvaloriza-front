@@ -29,6 +29,7 @@
 .home__users--user {
     width: 200px;
     height: 200px;
+    position: relative;
     padding: 8px 12px;
     background-color: #444;
     color: white;
@@ -36,6 +37,15 @@
     flex-direction: column;
     align-items: center;
     border-radius: 17px;
+}
+
+.home__users--user--badge {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    margin: 5px 5px 0 0;
 }
 
 .home__users--user--name {
@@ -80,7 +90,9 @@
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    border: none;
     border-radius: 7px;
+    color: white;
     transition: .3s background-color;
 }
 
@@ -113,7 +125,7 @@
     align-items: center;
 }
 
-.home__display--container {
+.home__display--container--tag {
     width: 23rem;
     height: 22rem;
     padding: 0 12px;
@@ -121,9 +133,23 @@
     background-color: #6C63FF;
     border-radius: 7px;
     position: relative;
-    display: flex;
+    display: none;
     flex-direction: column;
     row-gap: 25px;
+    overflow: hidden;
+}
+
+.home__display--container--profile {
+    width: 23rem;
+    height: 22rem;
+    padding: 12px;
+    position: relative;
+    background-color: #222;
+    color: white;
+    border-radius: 7px;
+    position: relative;
+    display: none;
+    flex-direction: column;
     overflow: hidden;
 }
 
@@ -142,8 +168,28 @@
     color: #4e48c2;
 }
 
+.home__display--error {
+    position: absolute;
+    width: 70%;
+    height: 1.5rem;
+    margin-top: 10px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ff0033;
+    font-size: 12px;
+    color: white;
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    display: none;
+}
+
 .home__display--page--switch {
-    width: 100%;
+    width: 100%;    
     position: absolute;
     bottom: 0;
     right: 0;
@@ -161,6 +207,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 
 .home__display--switch1:hover, .home__display--switch2:hover {
@@ -236,6 +283,12 @@
     padding: 8px;
     display: flex;
     align-items: center;
+    user-select: none;
+    border: 0;
+}
+
+.home__display--tag:hover {
+    cursor: pointer;
 }
 
 .home__display--tag--name {
@@ -295,4 +348,110 @@
     cursor: pointer;
     background-color: #4e48c2;
     color: white;
+}
+
+.home__display--badge {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: rgb(143, 143, 143);
+}
+
+.home__display--container--profile--header {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.profile__header--image--container {
+    width: 40%;
+    height: 100%;
+    padding-left: 5px;
+    display: flex;
+    justify-content: flex;
+    align-items: center;
+}
+
+.profile__header--image {
+    width: 80px;
+    border-radius: 50px;
+}
+
+.profile__header--about {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.profile__header--name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.profile__header--compliments--counter {
+    font-size: 14px;
+}
+
+.profile__last-compliments {
+    width: 100%;
+    height: 60%;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile__last-compliments--list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile__last-compliments--title {
+    font-size: 14px;
+}
+
+.profile__compliment {
+    width: 100%;
+    height: 50%;
+    background-color: #444;
+    border-radius: 7px;
+    padding: 2px 12px;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile__compliment--tag {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+}
+
+.profile__compliment--message {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 17px;
 }

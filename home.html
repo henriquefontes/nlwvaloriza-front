@@ -25,6 +25,9 @@
                     <li class="header__right--nav--item">
                         <input type="checkbox" class="header__right--nav--switch">
                     </li>
+                    <li class="header__right--nav--item">
+                        <button class="header__right--nav--exit">Deslogar</button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -35,46 +38,10 @@
                 <h1 class="home__header--title">Envie seu <span class="span">elogio</span> para melhorar o dia de alguém</h1>
             </div>
             <div class="home__users">
-                <div class="home__users--user">
-                    <div class="home__users--user--name">
-                        <span class="home__user--name">Diego</span>
-                    </div>
-                    <div class="home__users--user--image">
-                        <img class="home__user--image" src="https://blog.rocketseat.com.br/content/images/2019/05/profile.png" alt="" srcset="">
-                    </div>
-                    <div class="home__users--user--buttons">
-                        <div class="home__user--compliment"><span>Elogiar</span></div>
-                        <div class="home__user--profile"><span>Ver Perfil</span></div>
-                    </div>
-                </div>
-                <div class="home__users--user">
-                    <div class="home__users--user--name">
-                        <span class="home__user--name">Filipe</span>
-                    </div>
-                    <div class="home__users--user--image">
-                        <img class="home__user--image" src="https://filipedeschamps.com.br/avatar-big.png" alt="" srcset="">
-                    </div>
-                    <div class="home__users--user--buttons">
-                        <div class="home__user--compliment"><span>Elogiar</span></div>
-                        <div class="home__user--profile"><span>Ver Perfil</span></div>
-                    </div>
-                </div>
-                <div class="home__users--user">
-                    <div class="home__users--user--name">
-                        <span class="home__user--name">Fábio</span>
-                    </div>
-                    <div class="home__users--user--image">
-                        <img class="home__user--image" src="https://secure.gravatar.com/avatar/53e1b6743d43466ed5d4a4fa1f0915e1?s=500&d=mm&r=g" alt="" srcset="">
-                    </div>
-                    <div class="home__users--user--buttons">
-                        <div class="home__user--compliment"><span>Elogiar</span></div>
-                        <div class="home__user--profile"><span>Ver Perfil</span></div>
-                    </div>
-                </div>
-                
+                <div class="home__users--user--badge"><i class="fas fa-user-shield"></i></div>
             </div>
             <div class="home__display">
-                <div class="home__display--container">
+                <div class="home__display--container--tag">
                     <div class="home__display--close"><span><i class="fas fa-times"></i></span></div>
                     <div class="home__display--page--one">
                         <div class="home__display--header">
@@ -83,18 +50,6 @@
                         </div>
                         <div class="home__display--tag--container">
                             <div class="home__display--tag--list">
-                                <div class="home__display--tag selected"><span class="home__display--tag--name">Gente fina</span></div>
-                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Otimista</span></div>
-                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Professor</span></div>
-                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Sensacional</span></div>
-                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Bacana</span></div>
-                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Vencedor</span></div>
-                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Incrível</span></div>
-                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Camarada</span></div>
-                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Camarada</span></div>
-                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Camarada</span></div>
-                                <div class="home__display--tag not-selected"><span class="home__display--tag--name">Camarada</span></div>
-
                             </div>
                         </div>
                     </div>
@@ -110,11 +65,44 @@
                     <div class="home__display--page--switch">
                         <span class="home__display--switch1 selected">1</span>
                         <span class="home__display--switch2 not-selected">2</span>
-                    </div> 
+                    </div>
+                    <div class="home__display--error">
+                        <div class="home__display-error--icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <span class="home__display--error--title">Você só pode selecionar um elogio!</span>
+                    </div>
+                </div>
+                <div class="home__display--container--profile">
+                    <div class="home__display--close"><span><i class="fas fa-times"></i></span></div>
+                    <div class="home__display--badge">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Esse usuário é um admin</span>
+                    </div>
+                    <div class="home__display--container--profile--header">
+                        <div class="profile__header--image--container">
+                            <img class="profile__header--image" src="assets/img/home/user-img.png" alt="" srcset="">
+                        </div>
+                        <div class="profile__header--about">
+                            <span class="profile__header--name">Filipe</span>
+                            <span class="profile__header--compliments--counter">Já foi elogiado(a) 80 vezes.</span>
+                        </div>
+                    </div>
+                    <div class="profile__last-compliments">
+                        <div class="profile__last-compliments--list">
+                            <div class="profile__compliment">
+                                <span class="profile__compliment--tag">Vencedor</span>
+                                <span class="profile__compliment--message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate cumque sequi officiis corrupti</span>
+                            </div>
+                            <div class="profile__compliment">
+                                <span class="profile__compliment--tag">Camarada</span>
+                                <span class="profile__compliment--message">Você é uma pessoa sensacional!Você é uma pessoa sensacional!Você é uma pessoa sensacional</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <script src="assets/js/layouts/home.js"></script>
+    <script type="module" src="assets/js/layouts/home.js"></script>
+    <script type="module" src="assets/js/ajax/functions.js"></script>
 </body>
 </html>
