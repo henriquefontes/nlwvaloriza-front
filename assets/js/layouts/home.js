@@ -1,12 +1,25 @@
-import { getUsers, getTags, postCompliment } from "../ajax/functions.js";
+import { requestAPI } from "../ajax/functions.js";
 import { renderProfile, renderTags, renderUsers } from "../dom/functions.js";
 
 const token = localStorage.getItem('token');
 
-const users = await getUsers(token);
+if (!token) {
+    window.location.href = 'index.html';
+}
+
+const reqUsers = await requestAPI('users', 'GET', token);
+const users = reqUsers.json;
 const $users = renderUsers(users);
 
-const tags = await getTags(token);
+const reqSended = await requestAPI('users/compliments/send', 'GET', token);
+const sendedCompliments = reqSended.json;
+
+for (const compliment of sendedCompliments) {
+    console.log(compliment);
+}
+
+const reqTags = await requestAPI('tags', 'GET', token);
+const tags = reqTags.json;
 const $tags = renderTags(tags);
 
 const sendComplimentBtns = document.getElementsByClassName('home__user--compliment');
@@ -14,12 +27,10 @@ const viewProfileBtns = document.getElementsByClassName('home__user--profile');
 const closeBtns = document.getElementsByClassName('home__display--close');
 
 const $display = document.querySelector('.home__display');
-const tagsBtns = document.getElementsByClassName('home__display--tag');
 const $sendComplimentContainer = document.querySelector('.home__display--container--tag');
 
 const $viewProfileContainer = document.querySelector('.home__display--container--profile');
 
-const $close = document.querySelector('.home__display--close');
 const $btnPageOne = document.querySelector('.home__display--switch1');
 const $btnPageTwo = document.querySelector('.home__display--switch2');
 const $pageOne = document.querySelector('.home__display--page--one');
@@ -110,12 +121,16 @@ $complimentForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const userReceiverName = localStorage.getItem('user_receiver');
-    const userReceiverData = $users[userReceiverName];
+    const userReceiver = $users[userReceiverName].id;
     const message = document.querySelector('textarea').value;
     const tag = localStorage.getItem('tag');
 
-    if (message) {
-        const compliment = postCompliment(tag, userReceiverData, message, token)
+    if (message) { //tag, userReceiverData, message
+        const reqCompliment = requestAPI('compliments', 'POST', token, {
+            tag_id: tag,
+            user_receiver: userReceiver,
+            message: message
+        })
             .then(({response, json}) => {
                 const statusCode = response.status;
                 const errorMessage = json.error;
@@ -124,13 +139,13 @@ $complimentForm.addEventListener('submit', (e) => {
                     case 200:
                         $display.style.display = 'none';
                         alert('elogio enviado')
-                        console.log(data)
                         break;
                     default:
                         alert(errorMessage);
                         break;
+                    
                 }
             });
     }
 
-})
+});
