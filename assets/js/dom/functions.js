@@ -130,6 +130,8 @@ function renderTags(tags) {
         const $btnPageOne = document.querySelector('.home__display--switch1');
         const $btnPageTwo = document.querySelector('.home__display--switch2');
         const $errorMessage = document.querySelector('.home__display--error');
+        const $errorMessageContent = document.querySelector('.home__display--message--error-title');
+
 
         const element = tagButton.getAttribute('class').split(' ')[0];
         let tagButtonCondition = tagButton.getAttribute('class').split(' ')[1];
@@ -164,6 +166,7 @@ function renderTags(tags) {
                 complimentSelected = false;
                 tagButton.setAttribute('class', `${element} ${tagButtonCondition}`)
             } else {
+                $errorMessageContent.textContent = 'Você só pode selecionar uma tag!'
                 $errorMessage.style.display = 'flex';
                 setTimeout(() => {
                     $errorMessage.style.display ='none';

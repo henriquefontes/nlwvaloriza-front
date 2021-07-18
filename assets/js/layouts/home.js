@@ -120,6 +120,9 @@ const $complimentForm = document.querySelector('.home__display--form');
 $complimentForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    const $successMessage = document.querySelector('.home__display--success');
+    const $errorMessage = document.querySelector('.home__display--error');
+    const $errorMessageContent = document.querySelector('.home__display--message--error-title');
     const userReceiverName = localStorage.getItem('user_receiver');
     const userReceiver = $users[userReceiverName].id;
     const message = document.querySelector('textarea').value;
@@ -137,15 +140,26 @@ $complimentForm.addEventListener('submit', (e) => {
 
                 switch (statusCode) {
                     case 200:
-                        $display.style.display = 'none';
-                        alert('elogio enviado')
+                        $successMessage.style.display = 'flex';
+                        setTimeout(() => {
+                            $display.style = 'none';
+                            $successMessage.style.display ='none';
+                        }, 1200)
                         break;
                     default:
-                        alert(errorMessage);
-                        break;
-                    
+                        $errorMessageContent.textContent = 'Você não pode elogiar a si mesmo!'
+                        $errorMessage.style.display = 'flex';
+                        setTimeout(() => {
+                            $errorMessage.style.display = 'none';
+                        }, 2500)
                 }
             });
+    } else {
+        $errorMessageContent.textContent = 'A mensagem não pode ser vazia!'
+        $errorMessage.style.display = 'flex';
+        setTimeout(() => {
+            $errorMessage.style.display = 'none';
+        }, 2500)
     }
 
 });

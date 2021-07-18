@@ -168,7 +168,7 @@
     color: #4e48c2;
 }
 
-.home__display--error {
+.home__display--message {
     position: absolute;
     width: 70%;
     height: 1.5rem;
@@ -177,7 +177,6 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    background-color: #ff0033;
     font-size: 12px;
     color: white;
     border-radius: 22px;
@@ -185,7 +184,16 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
+}
+
+.home__display--error {
     display: none;
+    background-color: #ff0033;
+}
+
+.home__display--success {
+    display: none;
+    background-color: #25af3c;
 }
 
 .home__display--page--switch {
