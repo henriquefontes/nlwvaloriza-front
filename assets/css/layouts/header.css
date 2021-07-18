@@ -18,3 +18,19 @@
     display: flex;
     gap: 30px;
 }
+
+.header__button {
+    width: 6rem;
+    height: 100%;
+    border: 0;
+    padding: 5px;
+    border-radius: 32px;
+    background-color: #6C63FF;
+    color: white;
+    transition: .3s background-color;
+}
+
+.header__button:hover {
+    cursor: pointer;
+    background-color: #4e48c2;
+}

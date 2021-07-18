@@ -11,12 +11,12 @@ const reqUsers = await requestAPI('users', 'GET', token);
 const users = reqUsers.json;
 const $users = renderUsers(users);
 
-const reqSended = await requestAPI('users/compliments/send', 'GET', token);
+/* const reqSended = await requestAPI('profile/compliments/send', 'GET', token);
 const sendedCompliments = reqSended.json;
 
 for (const compliment of sendedCompliments) {
     console.log(compliment);
-}
+} */
 
 const reqTags = await requestAPI('tags', 'GET', token);
 const tags = reqTags.json;
@@ -110,7 +110,7 @@ $btnPageTwo.addEventListener('click', () => {
     }
 });
 
-const $exitButton = document.querySelector('.header__right--nav--exit');
+const $exitButton = document.querySelector('.header__button--exit');
 $exitButton.addEventListener('click', () => {
     localStorage.setItem('token', '');
     window.location.href = 'index.html';
@@ -125,8 +125,8 @@ $complimentForm.addEventListener('submit', (e) => {
     const message = document.querySelector('textarea').value;
     const tag = localStorage.getItem('tag');
 
-    if (message) { //tag, userReceiverData, message
-        const reqCompliment = requestAPI('compliments', 'POST', token, {
+    if (message) {
+        const reqCompliment = requestAPI('compliments/send', 'POST', token, {
             tag_id: tag,
             user_receiver: userReceiver,
             message: message

@@ -1,16 +1,55 @@
+import { requestAPI } from '../ajax/functions.js';
+
 let complimentSelected = false;
 
 function renderProfile(user) {
-    const badge = document.querySelector('.home__display--badge');
-    const name = document.querySelector('.profile__header--name');
+    const $badge = document.querySelector('.home__display--badge');
+    const $name = document.querySelector('.profile__header--name');
+    const $complimentsCounter = document.querySelector('.profile__header--compliments--counter');
+
+    const $complimentsContainer = document.querySelector('.profile__last-compliments--list');
+    $complimentsContainer.innerHTML = '';
+    $complimentsCounter.textContent = `Sem elogios ainda :(`;
 
     if(user.admin) {
-        badge.style.display = 'flex';
+        $badge.style.display = 'flex';
     } else {
-        badge.style.display = 'none';
+        $badge.style.display = 'none';
     }
 
-    name.textContent = user.name;
+    const token = localStorage.getItem('token');
+
+    const reqComplimentsByUser = requestAPI('compliments/user', 'POST', token, {
+        user_id: user.id
+    })
+        .then(({ response, json }) => {
+            const allComplimentsFromUser = json;
+
+            const lastComplimentsByUser = allComplimentsFromUser.slice(Math.max(allComplimentsFromUser.length - 2, 0));
+
+            for (const compliment of lastComplimentsByUser) {
+                const $complimentDiv = document.createElement('div');
+                const $tagCompliment = document.createElement('span');
+                const $messageCompliment = document.createElement('span');
+
+                $complimentDiv.classList.add('profile__compliment');
+                $tagCompliment.classList.add('profile__compliment--tag');
+                $messageCompliment.classList.add('profile__compliment--message');
+
+                $tagCompliment.textContent = compliment.tag.name;
+                $messageCompliment.textContent = compliment.message;
+                $complimentsCounter.textContent = `Já foi elogiado ${allComplimentsFromUser.length} vezes.`
+
+                $complimentDiv.append($tagCompliment, $messageCompliment)
+
+                $complimentsContainer.appendChild($complimentDiv);
+            }
+        })
+
+
+    $name.textContent = user.name;
+
+
 
 }
 
